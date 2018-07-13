@@ -1,0 +1,27 @@
+{
+
+    "name": "madcodez/youtube",
+    "type": "library",
+    "description": "PHP wrapper for the Youtube Data API v3 & YouTube Downloader",
+    "keywords": ["youtube", "api", "video", "youtube downloader","php youtube downloader"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rayhan Sardar",
+            "email": "madcode.git@gmail.com"
+        }
+    ],
+    "support":{
+            "email":"madcode.git@gmail.com",
+            "issues":"https://github.com/madcode-git/youtube/issues"
+    },
+    "require": {
+        "php" : ">=5.3",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Madcodez\\YouTube\\": "src"
+        }
+    }
+}
