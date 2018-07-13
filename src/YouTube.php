@@ -17,6 +17,72 @@ public function __construct($key) {
 	
 }
 
+public function chart($maxResults, $token = null) {
+
+	$params = array(
+	'chart' => 'mostPopular',
+	'type' => 'video',
+	'part' => 'id',
+	'order' => 'relevance',
+	'maxResults' => $maxResults
+	);
+	
+	if (!is_null($token)) {
+	$params['pageToken'] = $token;
+	}
+	
+	$out = self::api_get($this->endPoint['search'], $params);
+	
+	foreach($out->items as $o) {
+		$ids[] = $o->id->videoId;
+	}
+	
+	if (isset($out->prevPageToken)) {
+	$info['page_info']['prevPage'] = $out->prevPageToken;
+	}
+	if (isset($out->nextPageToken)) {
+	$info['page_info']['nextPage'] = $out->nextPageToken;
+	}
+	
+	$info['content'] = self::formatVideos($ids);
+	
+	return $info;
+	
+}
+
+public function videoByCat($catID, $maxResults, $token = null) {
+
+	$params = array(
+	'videoCategoryId' => $catID,
+	'type' => 'video',
+	'part' => 'id',
+	'order' => 'relevance',
+	'maxResults' => $maxResults
+	);
+	
+	if (!is_null($token)) {
+	$params['pageToken'] = $token;
+	}
+	
+	$out = self::api_get($this->endPoint['search'], $params);
+	
+	foreach($out->items as $o) {
+		$ids[] = $o->id->videoId;
+	}
+	
+	if (isset($out->prevPageToken)) {
+	$info['page_info']['prevPage'] = $out->prevPageToken;
+	}
+	if (isset($out->nextPageToken)) {
+	$info['page_info']['nextPage'] = $out->nextPageToken;
+	}
+	
+	$info['content'] = self::formatVideos($ids);
+	
+	return $info;
+	
+}
+
 public function search($q, $maxResults, $token = null) {
 
 	$params = array(
@@ -83,38 +149,70 @@ public function channel($chId, $maxResults, $token = null) {
 	
 }
 
-public function related($id, $maxResults, $token = null) {
-
-	$params = array(
-	'relatedToVideoId' => $id,
-	'type' => 'video',
-	'part' => 'id',
-	'order' => 'relevance',
-	'maxResults' => $maxResults
-	);
-	
-	if (!is_null($token)) {
-	$params['pageToken'] = $token;
-	}
-	
-	$out = self::api_get($this->endPoint['search'], $params);
-	
-	foreach($out->items as $o) {
-		$ids[] = $o->id->videoId;
-	}
-	
-	if (isset($out->prevPageToken)) {
-	$info['page_info']['prevPage'] = $out->prevPageToken;
-	}
-	if (isset($out->nextPageToken)) {
-	$info['page_info']['nextPage'] = $out->nextPageToken;
-	}
-	
-	$info['content'] = self::formatVideos($ids);
-	
-	return $info;
-	
-}
+public function related($id, $maxResults, $token = null) {
+
+
+
+	$params = array(
+
+	'relatedToVideoId' => $id,
+
+	'type' => 'video',
+
+	'part' => 'id',
+
+	'order' => 'relevance',
+
+	'maxResults' => $maxResults
+
+	);
+
+	
+
+	if (!is_null($token)) {
+
+	$params['pageToken'] = $token;
+
+	}
+
+	
+
+	$out = self::api_get($this->endPoint['search'], $params);
+
+	
+
+	foreach($out->items as $o) {
+
+		$ids[] = $o->id->videoId;
+
+	}
+
+	
+
+	if (isset($out->prevPageToken)) {
+
+	$info['page_info']['prevPage'] = $out->prevPageToken;
+
+	}
+
+	if (isset($out->nextPageToken)) {
+
+	$info['page_info']['nextPage'] = $out->nextPageToken;
+
+	}
+
+	
+
+	$info['content'] = self::formatVideos($ids);
+
+	
+
+	return $info;
+
+	
+
+}
+
 
 public function video($id) {
 	return self::formatVideos($id);
