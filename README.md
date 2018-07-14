@@ -45,3 +45,16 @@ $video = $youtube->video('rie-hPVJ7Sw');
 
 print_r($video);
 ```
+
+## Format of returned data
+
+The returnd data is a PHP Array
+
+## Youtube Data API v3
+
+* [Obtain API key from Google API Console](https://code.google.com/apis/console)
+
+## Contact
+
+For bugs, complain and suggestions please [file an Issue here](https://github.com/madcode-git/youtube/issues) or send email to madcode.git@gmail.com :smile:
+
