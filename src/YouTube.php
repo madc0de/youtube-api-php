@@ -51,7 +51,7 @@ public function chart($maxResults, $token = null) {
 
 	foreach($out->items as $o) {
 
-		$ids[] = $o->id->videoId;
+		$ids[] = $o->id;
 
 	}
 
@@ -87,6 +87,8 @@ public function videoByCat($catID, $maxResults, $token = null) {
 
 
 	$params = array(
+	
+	'chart' => 'mostPopular',
 
 	'videoCategoryId' => $catID,
 
@@ -116,7 +118,7 @@ public function videoByCat($catID, $maxResults, $token = null) {
 
 	foreach($out->items as $o) {
 
-		$ids[] = $o->id->videoId;
+		$ids[] = $o->id;
 
 	}
 
