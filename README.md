@@ -16,3 +16,32 @@ Run the following command in your command line shell in your php project
 ```
 composer require madcodez/youtube
 ```
+
+## Usage
+
+### Example usage of Searching :
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$youtube = new Madcodez\YouTube\YouTube('* Your API key here *');
+
+$seach = $youtube->search('Web Development', '10', $pageToken);
+
+print_r($search);
+```
+
+### Example usage of video info :
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$youtube = new Madcodez\YouTube\YouTube('* Your API key here *');
+
+$video = $youtube->video('rie-hPVJ7Sw');
+
+print_r($video);
+```
