@@ -46,6 +46,20 @@ $video = $youtube->video('rie-hPVJ7Sw');
 print_r($video);
 ```
 
+### Example usage of getting channel wise video :
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$youtube = new Madcodez\YouTube\YouTube('* Your API key here *');
+
+$channel = $youtube->channel('UC0gTtCL29NCuex5OApWXpPQ', '10', $pageToken);
+
+print_r($channel);
+```
+
 ## Format of returned data
 
 The returnd data is a PHP Array
