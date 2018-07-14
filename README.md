@@ -58,3 +58,6 @@ The returnd data is a PHP Array
 
 For bugs, complain and suggestions please [file an Issue here](https://github.com/madcode-git/youtube/issues) or send email to madcode.git@gmail.com :smile:
 
+## License
+
+This library is licensed under the [MIT License](http://opensource.org/licenses/MIT).
