@@ -60,6 +60,21 @@ $channel = $youtube->channel('UC0gTtCL29NCuex5OApWXpPQ', '10', $pageToken);
 print_r($channel);
 ```
 
+### Example usage of getting related videos :
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$youtube = new Madcodez\YouTube\YouTube('* Your API key here *');
+
+$related = $youtube->related('nLzV5l0Enww', '10', $pageToken);
+
+print_r($related);
+```
+
+
 ## Format of returned data
 
 The returnd data is a PHP Array
