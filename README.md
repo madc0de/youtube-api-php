@@ -19,6 +19,20 @@ composer require madcodez/youtube
 
 ## Usage
 
+### Example usage of getting "Top of the chart" videos :
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$youtube = new Madcodez\YouTube\YouTube('* Your API key here *');
+
+$chart = $youtube->chart('10', $pageToken);
+
+print_r($chart);
+```
+
 ### Example usage of Searching :
 
 ```php
