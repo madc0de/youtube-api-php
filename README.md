@@ -33,6 +33,20 @@ $chart = $youtube->chart('10', $pageToken);
 print_r($chart);
 ```
 
+### Example usage of getting Category wise "Top of the chart" videos : 
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$youtube = new Madcodez\YouTube\YouTube('* Your API key here *');
+
+$catVid = $youtube->videoByCat('2', '10', $pageToken);
+
+print_r($catVid);
+```
+
 ### Example usage of Searching :
 
 ```php
