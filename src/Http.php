@@ -25,7 +25,7 @@ public static function getHttp($url,$headers=false)
     $ch      = curl_init( $url );
     curl_setopt_array( $ch, $options );
     $content = curl_exec( $ch );
-    if($header) {
+    if($headers) {
     $head  = curl_getinfo( $ch );
     }
     
